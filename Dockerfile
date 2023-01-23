@@ -1,0 +1,10 @@
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+ENV PORT=8080
+ENV USER=YOUR_MONGODB_USER
+ENV PASSWORD=YOUR_MONGODB_USER_PASSWORD
+EXPOSE 8080
+CMD ["node", "server.js"]
